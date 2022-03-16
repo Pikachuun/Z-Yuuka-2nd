@@ -11,7 +11,7 @@
 [Info]
 name="Z-Yuuka"
 displayname="Kazami Yuuka"
-Author="Ziddia"
+Author="Ziddia+2i"
 mugenversion = 1.1
 [Files]
 cmd=Z-Yuuka 2nd.def
@@ -183,6 +183,7 @@ trigger1=0
 
 [State -2, Obtain MUGEN Version]
 type = Null
+trigger1 = 1 || var(5259492) := 1 ;Variable Expansion Enable
 trigger1 = var(2) := var(1740440064) || 1 ;; get version
 ignorehitpause = 1
 persistent = 256
@@ -394,11 +395,11 @@ trigger1 = Facing != 1
 ignorehitpause = 1
 persistent = 256
 
-[State -2, Debug]
+[State -2, Debug+Format Spec Test]
 type = DisplayToClipboard
 trigger1 = 1
-text = "ME=%d E=%d E2=%d KO-Time=%d mugenversion=%d"
-params = var(10), var(11), var(12), sysvar(1), var(2)
+text = "ME=%p E=%p E2=%08x KO-Time=%hd mugenversion=%*c%c"
+params = var(10), var(11), var(12), sysvar(1)*100, var(2), var(2)+48
 ignorehitpause = 1
 persistent = 256
 

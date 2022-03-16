@@ -158,6 +158,13 @@ trigger2 = (var(var(12) + 436) := 1) || 1 ;; Freeze
 ignorehitpause = 1
 persistent = 256
 
+[State 11223342, Disable Variable Expansion]
+type = Null
+trigger1 = 1 || var(5259492) := 0
+ignorehitpause = 1
+persistent = 256
+
+
 [Statedef 11223343]
 movetype = A
 
